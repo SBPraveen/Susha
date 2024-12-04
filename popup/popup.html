@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Susha</title>
+    <style>
+      body {
+        width: 400px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background: #140033;
+        color: #d5baff;
+        border-radius: 10px;
+      }
+      #login-container {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #login-text {
+        font-size: 20px;
+      }
+      #login-button {
+        font-size: 20px;
+        background: #23005a;
+        border: 1px solid #f6f0ff;
+        width: 75%;
+        height: 40px;
+        color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #events-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      #refresh {
+        list-style-type: none;
+        padding: 0;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      #google-icon {
+        padding: 0;
+        margin-right: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: none;
+      }
+      .event-item {
+        padding: 5px;
+        font-size: 15px;
+        background: #23005a;
+        border: 1px solid #986bdd;
+        width: 95%;
+        color: #d5baff;
+        border-radius: 10px;
+        margin-top: 15px;
+        cursor: pointer;
+        display: flex;
+        padding-left: 10px;
+        flex-direction: column;
+      }
+      ::-webkit-scrollbar {
+        width: 7px; /* Width of the scrollbar */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #4c1f90; /* Color of the scrollbar thumb */
+        border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #5d3894; /* Color when hovering over the thumb */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #140033;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-track-piece {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <img src="../assets/susha_icon_text.svg" alt="susha" width="60" />
+      <button id="refresh">
+        <img
+          src="../assets/refresh.svg"
+          id="refresh-icon"
+          alt="refresh"
+          width="17"
+        />
+      </button>
+    </div>
+    <div id="login-container">
+      <p id="login-text">
+        Stay focused, stick to your schedule, and get things done with Susha
+      </p>
+      <button id="login-button">
+        <img
+          src="../assets/google.svg"
+          id="google-icon"
+          alt="google"
+          width="17"
+        />
+        Sync Google Calendar
+      </button>
+    </div>
+    <div id="events-container">
+      <ul id="events-list"></ul>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

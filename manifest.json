@@ -1,0 +1,42 @@
+{
+  "name": "Susha",
+  "version": "1.0.0",
+  "description": "Susha is a Chrome extension that syncs with Google Calendar to block distracting websites, helping you stay focused and turn your plans into actions for a more productive day.",
+  "permissions": ["activeTab", "identity", "storage"],
+  "oauth2": {
+    "client_id": "1052414079338-049pgn56fhr536ujr2scifrst4dnj2ma.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar.readonly"]
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/achieve.svg",
+        "assets/susha_icon_text.svg",
+        "assets/google.svg",
+        "assets/refresh.svg"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/susha16.png",
+      "24": "assets/susha24.png",
+      "32": "assets/susha32.png"
+    },
+    "default_title": "Susha",
+    "default_popup": "popup/popup.html"
+  },
+  "manifest_version": 3
+}
